@@ -5,7 +5,7 @@ class Solution:
 		n_r = fin - mid
 		L = []
 		R = []
-		inf = 999999999999
+		inf = 9999999999999
 		for i in range(n_l):
 			L.append(A[st + i])
 		for i in range(n_r):
