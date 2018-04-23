@@ -242,7 +242,7 @@ class int_tree:
 
 	def interval_search(self, i): # O(lg(n))
 		x = self.root
-		while x != self.nil and ((i.int.low > x.int.high) or (x.int.low > i.int.high)):
+		while x != self.nil and ((i.int.low >= x.int.high) or (x.int.low >= i.int.high)): # > -> >=
 			if (x.left != self.nil) and (self.max_el(x.left) >= i.int.low):
 				x = x.left
 			else:
@@ -260,7 +260,7 @@ i_tree.insert(B)
 C = Node(8, 9)
 i_tree.insert(C)
 #print(i_tree.root.left.int.low)
-D = Node(0, 1)
+D = Node(20, 25)
 print(i_tree.interval_search(D).int.low)
 
 

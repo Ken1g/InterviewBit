@@ -30,7 +30,7 @@ class BinHeap:
 		if i * 2 + 1 > self.currentSize:
 			return i * 2
 		else:
-			if self.heapList[i * 2] < self.heapList[i * 2 + 1]:
+			if self.heapList[i*2] < self.heapList[i*2+1]:
 				return i * 2
 			else:
 				return i * 2 + 1
@@ -52,37 +52,30 @@ class BinHeap:
 			self.percDown(i)
 			i = i - 1
 
-	def dec_key(self, i, key):
-		if key > self.heapList[i]:
-			return False
-		while i > 1 and self.heapList[2 * i] > self.heapList[i]:
-			t = self.heapList[i]
-			self.heaplist[i] = self.heaplist[2 * i]
-			self.heaplist[2 * i] = t
-			i = 2 * i
+class Graph:
+	def __init__(self):
+		self.vertexes = []
+
+	def add_vertex(self, v):
+		self.vertexes.append(v)
+
+
+class vertex:
+	def __init__(self):
+		self.adj = []
+		self.key = None
+		self.p = None
 
 
 
-bh = BinHeap()
-bh.buildHeap([9,5,6,2,3])
-
-print(bh.delMin())
-print(bh.delMin())
-print(bh.delMin())
-print(bh.delMin())
-print(bh.delMin())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def Prim(G, w, r):
+	inf = 99999999
+	for u in v.adj:
+		u.key = inf
+		Q = BinHeap()
+		Q.buildHeap(G.vertexes)
+		while Q.currentSize != 0:
+			u = Q.delMin()
+			for v in u.adj:
+				if v in Q.heapList and w[u][v] < v.key:
+					v.p = uv.key = w[u][v]
