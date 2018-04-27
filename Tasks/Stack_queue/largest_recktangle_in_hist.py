@@ -36,6 +36,7 @@ class Solution:
 						L = st.peek()
 						if L == None:
 							L = -1
+						print((R - L - 1) * h)
 						max_recktangle = max(max_recktangle, (R - L - 1) * h)
 					st.push(i)
 			i = len(A)
@@ -46,6 +47,8 @@ class Solution:
 				L = st.peek()
 				if L == None:
 					L = -1
+				print((R - L - 1) * h)
+
 				max_recktangle = max(max_recktangle, (R - L - 1) * h)
 
 			return max_recktangle
@@ -59,7 +62,7 @@ class Solution:
 
 
 sol = Solution()
-A = [1, 2, 3, 4, 5, 5, 5, 3, 2]
+A = [2, 1, 5, 6, 2, 3]
 print(sol.largestRectangleArea(A))
 
 

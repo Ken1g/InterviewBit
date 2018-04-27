@@ -2,7 +2,7 @@ class Solution:
 	def findRank(self, A):
 		to_sort = []
 		for idx, letter in enumerate(A):
-			to_sort.append((ord(letter), idx))
+			to_sor t.append((ord(letter), idx))
 		to_sort.sort()
 
 		positions = {}
